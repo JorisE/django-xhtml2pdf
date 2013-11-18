@@ -32,10 +32,10 @@ def fetch_resources(uri, rel):
                 if os.path.exists(path):
                     break
     else:
-        raise UnsupportedMediaPathException(
-                                'media urls must start with %s or %s' % (
-                                settings.MEDIA_ROOT, settings.STATIC_ROOT))
+        path = uri
+
     return path
+
 
 def generate_pdf_template_object(template_object, file_object, context):
     """
